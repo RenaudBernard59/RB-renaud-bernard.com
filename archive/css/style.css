@@ -1,0 +1,259 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*** Pour tous les supports ***/
+@media screen and (min-device-width: 768px)
+{
+#global {
+	  background-image: url(/images/rbc-background01.jpg);
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-size: 100;	  
+}
+
+header .row{
+	background-color: black;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+	margin-left: -45px;
+}
+
+nav li {
+	 margin-right: 20px;
+}
+
+nav a {
+	color: white;
+	font-size: 1.3em;
+}
+
+body {
+  padding-top: 10px;
+  color: white;
+  font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 6px;
+  line-height: 40px;
+  text-align: justify;
+  align: bottom;
+}
+
+section h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+h2 {
+	font-weight: lighter;
+	font-size: 1.3em;
+	font-style: italic;
+	background-color:#3B3B3B;
+	border: #F76300 solid 1px;
+	border-radius: 20px 20px;
+	text-align: center;
+	padding: 10px;
+}
+
+article h2, aside h2 {
+	font-weight: bold;
+	font-size: 2em;	
+	font-style: normal;
+}
+
+article h3 {
+	font-weight: bold;
+	font-size: 1.5em;	
+	font-style: normal;
+	text-align:center;
+	background-color:#3B3B3B;
+	border-radius: 20px 20px;
+	border: #F76300 solid 1px;
+}
+
+article, aside {
+  background-color: rgba(0,0,0,0.20);
+  border: solid black 3px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+
+aside {
+	box-shadow: 20 20 0 black
+}
+
+#input {
+	color: black;
+	font-weight: bold;
+	font-size: 2em;
+	width: 50%;
+	text-align: center;
+	border-radius: 20px;
+	margin-left:25%;
+	margin-right:25%;
+	margin-top: 30px;
+	background: #a02420; /* Old browsers */
+	background: -moz-linear-gradient(top, #a02420 0%, #ff7c7c 27%, #ffffff 54%, #ff7c7c 75%, #600000 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a02420 0%,#ff7c7c 27%,#ffffff 54%,#ff7c7c 75%,#600000 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a02420 0%,#ff7c7c 27%,#ffffff 54%,#ff7c7c 75%,#600000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a02420', endColorstr='#600000',GradientType=0 ); /* IE6-9 */
+	border: solid black 2px;
+	
+}
+
+footer {
+	background-color: black;
+	text-align: center;
+	border-radius: 6px;
+  	line-height: 40px;
+}
+
+/** TRANSFORM et TRANSITION **/
+
+.social { 
+    float : left;
+    width : 280px;
+    font-size : 10px;   
+    text-align : right;   
+    padding : 30px 20px 10px 35px;
+    /** le "nav" est fixe */
+    position : fixed;    
+    top : 2%;
+    
+    /** on met une valeur négative pour le masquer en partie sur la gauche */
+    left : -290px;
+    background-color: orange;
+    box-shadow: 2px 2px 1px 1px rgba(20,20,20,0.3);
+
+    /** transitions sur position left, couleur ombre et transformation
+     version "éclatée" en 4 propriétés, 
+    on joue sur les délais et durées pour l'effet de "sortie" puis d'"avancée"*/    
+
+    transition-property : left, background-color, box-shadow, transform;
+    transition-duration : 0.5s, 1.5s, 0.75s, 0.75s;
+    transition-delay : 0.5s, 0s, 1s, 1s;
+    transition-timing-function : ease-out,linear, ease-in-out, ease-in-out;
+	box-sizing:content-box;
+	line-height: normal;
+}
+
+.logo-socials {
+	width: 20px;
+}
+
+.sections {
+	text-align: center;
+	text-weight: bold;
+	color: black;
+}
+
+.menuVertical {
+	aling: center;
+}
+
+.menuHorizontal {
+	text-aling: center;
+	padding: 1px;
+}
+
+/** 
+    on déplace vers la droite, change couleur de fond 
+    et modifie la boite d'ombrage (élargissement zone ombrée)
+    + transformation : zoom 
+
+    effet "d'avancée au 1er plan" / reste de la page"
+*/
+nav:hover {
+    left : 0px;
+}
+
+nav a:hover {
+	color: #FF999A;
+}
+
+nav div.item {
+    border : solid 2px rgb(60,60,60);
+    margin : 5px 0px;
+    background-color : #FFA600;
+    color : white;
+}
+
+nav div.item:hover {
+    /** changements des couleurs "en douceur" **/
+    transition : color 2s, background-color 1s;
+    background-color : #FFCC4F;
+    color : black;
+}
+
+
+/** on joue sur les couleurs de nav en avant et arrière plan
+    pour "afficher/masquer" #menuVertical et #menuHorizontal**/
+nav div#menuHorizontal {
+    font-size : 18px;
+    position : absolute;
+    text-align : center;
+    left : 75px;
+    top : 5px;
+}
+nav div#menuVertical {
+    font-size : 18px;
+    position : absolute;
+    right : 2px;
+    top : 20px;
+    color :  white;
+}
+
+.colonnes {
+	padding-left: 20%;
+	padding-right: 20%;
+}
+}
+
+/* Responsivité */
+
+@media screen and (min-width: 768px)
+{
+.socialMobile {
+	display: none;
+}
+
+}
+
+
+#global {
+	  background-image: url(/images/rbc-background01.jpg);
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-size: 100;	  
+}
+@media screen and (max-width: 1000px)
+{
+#global {
+	  background-image: url(/images/rbc-background01.jpg);
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-size: 200;	  
+}
+}
+@media screen and (max-width: 768px)
+{
+.colonnes {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.social {
+	display: none;
+}
+
+.backgroundMobile {
+	background-color: rgba(255,255,255,0.5);
+}
+
+}
